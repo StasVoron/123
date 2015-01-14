@@ -12,7 +12,7 @@ class Question(models.Model):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 
-    def __unicode__(self):              # __unicode__ on Python 2
+    def __unicode__(self):  
         return self.question_text
 
 
@@ -20,6 +20,6 @@ class Choice(models.Model):
     question = models.ForeignKey(Question)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
-    def __unicode__(self):              # __unicode__ on Python 2
+    def __unicode__(self):  
         return self.choice_text
 
